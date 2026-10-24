@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO (deploy stage): add the sitemap line once the domain is known, e.g.
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml

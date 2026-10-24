@@ -1,0 +1,42 @@
+# A2H Badminton Arena website (v1)
+
+A one-page, mobile-first website. Its only job: get people to **WhatsApp or call** to book.
+
+## How it works (the 30-second explanation)
+
+- It's a **static site**: plain files (HTML for content, CSS for looks, a little JavaScript for extras). There's no server, database or login. That makes it fast, free to host, and hard to break.
+- Every "Book" button is a **WhatsApp click-to-chat link** (`wa.me/917200796960?text=...`). The message is already typed in when WhatsApp opens. Phone buttons use `tel:` links.
+- On phones, a **sticky bar** at the bottom keeps WhatsApp and Call one tap away.
+- **SEO**: the page title and description, plus a hidden "structured data" block (JSON-LD), tell Google the name, address, hours and phone number.
+
+## Files
+
+```
+index.html        All content (text, links, sections)
+css/styles.css    All styling. Brand colours are at the top (:root)
+js/main.js        Mobile menu, "Open now" badge, footer year
+images/           Web-optimised photos (WebP + JPG fallback)
+favicon.svg       Browser tab icon
+robots.txt        Tells search engines they can index the site
+```
+
+## Preview locally
+
+Open `index.html` in a browser. Or, in VS Code, run `npx serve .` in this folder and open the address it prints.
+
+## Common updates
+
+| Change | Where |
+| --- | --- |
+| Opening hours | `index.html` (search "6 AM"), the JSON-LD block in `<head>`, and `HOURS` in `js/main.js` |
+| Phone / WhatsApp number | `index.html`: search `7200796960` and replace every occurrence |
+| Add a gallery photo | Add the file to `images/`, then copy a `<figure class="gallery-item">` block in the Gallery section |
+| Coaching details | Coaching section in `index.html`: replace the "Coming soon" cards |
+| Colours | Top of `css/styles.css` |
+
+## Still to do before launch
+
+- Confirm the items marked `TODO` in `index.html`
+- Domain → add canonical URL, absolute `og:image`, sitemap
+- Deploy (Cloudflare Pages or Netlify), then Google Search Console and the Google Business Profile
+- Tamil version (planned as `/ta/index.html`, with a language switch)
