@@ -1,4 +1,4 @@
-// A2H Badminton Arena — small enhancements.
+// A2H Badminton & Indoor Sports — small enhancements.
 // The site works fully without JavaScript; this only adds the mobile menu,
 // the live "Open now" badge and the footer year.
 

@@ -1,4 +1,4 @@
-# A2H Badminton Arena website (v1)
+# A2H Badminton & Indoor Sports website (v1)
 
 A one-page, mobile-first website. Its only job: get people to **WhatsApp or call** to book.
 
@@ -33,6 +33,7 @@ Open `index.html` in a browser. Or, in VS Code, run `npx serve .` in this folder
 | Add a gallery photo | Add the file to `images/`, then copy a `<figure class="gallery-item">` block in the Gallery section |
 | Coaching details | Coaching section in `index.html`: replace the "Coming soon" cards |
 | Colours | Top of `css/styles.css` |
+| Logo | `images/logo-wide.svg` (header), `images/logo-on-dark.svg` (footer), `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`. Master files and the script that makes them are in `../Logo/` |
 
 ## Still to do before launch
 

@@ -1,5 +1,5 @@
 /* =========================================================
-   A2H Badminton Arena — styles
+   A2H Badminton & Indoor Sports — styles
    Mobile-first: base styles are for phones; @media (min-width)
    blocks add layout for bigger screens.
    ========================================================= */
@@ -11,7 +11,7 @@
   --green-600: #128257;   /* hover */
   --green-100: #DCEFE4;
   --green-50:  #F0F8F3;   /* tinted section background */
-  --yellow:    #FFD23F;   /* accent, from the A2H banners */
+  --yellow:    #FFD23F;   /* accent: the TT bat in the logo */
   --ink:       #12251D;   /* body text */
   --muted:     #4B5E56;   /* secondary text */
   --line:      #D5E3DB;
@@ -101,14 +101,9 @@ address { font-style: normal; }
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
 
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--green-900); }
-.brand-mark {
-  display: inline-grid; place-items: center;
-  background: var(--green-900); color: var(--yellow);
-  font: 800 1.15rem/1 var(--font-display); letter-spacing: .04em;
-  padding: 7px 9px; border-radius: 8px;
-}
-.brand-name { font: 700 1.3rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .03em; }
+/* Logo files: images/logo-wide.svg (header) and images/logo-on-dark.svg (footer). Made from Logo/source. */
+.brand { display: flex; align-items: center; text-decoration: none; }
+.brand-logo { display: block; height: 44px; width: auto; }
 
 .nav-toggle {
   display: inline-grid; place-items: center;
@@ -294,8 +289,8 @@ h1 { position: relative; z-index: 0; }
 /* ---------- 13. Footer ---------- */
 .site-footer { background: var(--green-900); color: #C9DDD3; padding: 40px 0 20px; }
 .footer-inner { display: grid; gap: 20px; }
-.footer-brand { display: flex; align-items: center; gap: 10px; font: 700 1.4rem/1 var(--font-display); color: var(--white); text-transform: uppercase; }
-.footer-brand .brand-mark { background: var(--yellow); color: var(--green-900); }
+.footer-brand { margin: 0 0 1em; }
+.footer-logo { display: block; height: 120px; width: auto; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
 .site-footer a { color: var(--white); }
 .copyright { margin: 24px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.12); font-size: .88rem; }
@@ -324,6 +319,7 @@ h1 { position: relative; z-index: 0; }
 
 @media (min-width: 900px) {
   :root { --header-h: 72px; }
+  .brand-logo { height: 50px; }
   body { padding-bottom: 0; }
   .mobile-bar { display: none; }
 
