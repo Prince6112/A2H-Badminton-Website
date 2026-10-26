@@ -2,8 +2,8 @@
 // The site works fully without JavaScript; this only adds the mobile menu,
 // the live "Open now" badge and the footer year.
 
-// ---- Opening hours (24h clock, India time). Update here if hours change. ----
-const HOURS = { open: 6, close: 22 }; // 6 AM – 10 PM, every day
+// ---- Opening hours: the arena is open 24 hours, every day. ----
+// (If fixed hours ever return, see the Git history for the old open/closed logic.)
 
 // ---- Mobile menu toggle ----
 const toggle = document.querySelector('.nav-toggle');
@@ -23,25 +23,11 @@ if (toggle && nav) {
   });
 }
 
-// ---- "Open now" badge, always calculated in India time (Asia/Kolkata) ----
-function formatHour(h) {
-  const suffix = h >= 12 ? 'PM' : 'AM';
-  const h12 = h % 12 === 0 ? 12 : h % 12;
-  return `${h12} ${suffix}`;
-}
-
+// ---- "Open now" badge (always open: 24 hours, every day) ----
 const statusEl = document.querySelector('[data-open-status]');
 if (statusEl) {
-  const parts = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Kolkata', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'
-  }).formatToParts(new Date());
-  const hour = Number(parts.find((p) => p.type === 'hour').value);
-  const isOpen = hour >= HOURS.open && hour < HOURS.close;
-
-  statusEl.classList.toggle('is-open', isOpen);
-  statusEl.innerHTML = isOpen
-    ? `<span class="dot" aria-hidden="true"></span><span>Open now · until ${formatHour(HOURS.close)}</span>`
-    : `<span class="dot" aria-hidden="true"></span><span>Closed now · opens ${formatHour(HOURS.open)}</span>`;
+  statusEl.classList.add('is-open');
+  statusEl.innerHTML = '<span class="dot" aria-hidden="true"></span><span>Open now · 24 hours, every day</span>';
 }
 
 // ---- Footer year ----

@@ -28,7 +28,7 @@ Open `index.html` in a browser. Or, in VS Code, run `npx serve .` in this folder
 
 | Change | Where |
 | --- | --- |
-| Opening hours | `index.html` (search "6 AM"), the JSON-LD block in `<head>`, and `HOURS` in `js/main.js` |
+| Opening hours | Currently 24 hours. `index.html` (search "24 hours"), the JSON-LD `openingHoursSpecification` in `<head>`, and the "Open now" badge in `js/main.js` |
 | Phone / WhatsApp number | `index.html`: search `7200796960` and replace every occurrence |
 | Add a gallery photo | Add the file to `images/`, then copy a `<figure class="gallery-item">` block in the Gallery section |
 | Coaching details | Coaching section in `index.html`: replace the "Coming soon" cards |
