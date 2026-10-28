@@ -198,8 +198,8 @@
         <ol class="steps">
           <li>
             <span class="step-num" aria-hidden="true">1</span>
-            <h3>Message or call</h3>
-            <p>WhatsApp or call <a href="tel:+917200796960">72007 96960</a> with the date and time you want.</p>
+            <h3>Send your details</h3>
+            <p>Fill in the <a href="#book">booking form</a> below and tap Continue on WhatsApp. Or call <a href="tel:+917200796960">72007 96960</a>.</p>
           </li>
           <li>
             <span class="step-num" aria-hidden="true">2</span>
@@ -218,7 +218,7 @@
             <h3>Badminton</h3>
             <p>Hourly court booking, 24 hours a day. Singles or doubles.</p>
             <p class="price-note">Pricing: call or WhatsApp for current rates</p>
-            <a class="btn btn-wa" href="https://wa.me/917200796960?text=Hi%20A2H%20Badminton%20%26%20Indoor%20Sports%21%20I%20would%20like%20to%20book%20the%20badminton%20court.%20Preferred%20date%20and%20time%3A%20" target="_blank" rel="noopener">
+            <a class="btn btn-wa" href="#book" data-book-sport="Badminton">
               <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Book badminton
             </a>
           </article>
@@ -226,10 +226,77 @@
             <h3>Table tennis</h3>
             <p>Table tennis is also available. Message us to book a slot.</p>
             <p class="price-note">Pricing: call or WhatsApp for current rates</p>
-            <a class="btn btn-wa" href="https://wa.me/917200796960?text=Hi%20A2H%20Badminton%20%26%20Indoor%20Sports%21%20I%20would%20like%20to%20book%20table%20tennis.%20Preferred%20date%20and%20time%3A%20" target="_blank" rel="noopener">
+            <a class="btn btn-wa" href="#book" data-book-sport="Table tennis">
               <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Book table tennis
             </a>
           </article>
+        </div>
+
+        <!-- ===== Booking form =====
+             Builds a pre-filled WhatsApp message from the visitor's details (see js/main.js).
+             Nothing is saved or sent anywhere except into the visitor's own WhatsApp. -->
+        <div class="booking" id="book">
+          <div class="booking-info">
+            <p class="booking-tag">
+              <svg class="icon" aria-hidden="true"><use href="#i-shuttle"/></svg> Book a slot
+            </p>
+            <h3 class="booking-title">Your next game starts here</h3>
+            <p class="booking-intro">Fill in your details and tap <strong>Continue on WhatsApp</strong>. Your message is typed in for you, so just press send. We'll confirm your slot and share the current rate.</p>
+
+            <p class="booking-where"><strong>Find us in Vennampatti</strong>
+              1/908, TNHB, Vennampatti, Virupakshipuram, Dharmapuri, Tamil Nadu</p>
+            <p class="booking-hours">Open 24 hours, every day</p>
+            <a class="booking-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=12.1131607,78.1472197" target="_blank" rel="noopener">Get directions to the court <span aria-hidden="true">&#8599;</span></a>
+          </div>
+
+          <form class="booking-form" id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="bk-name">Name</label>
+                <input id="bk-name" name="name" type="text" autocomplete="name" maxlength="60" placeholder="Your name" required aria-describedby="bk-name-err">
+                <p class="field-error" id="bk-name-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="bk-phone">Phone</label>
+                <input id="bk-phone" name="phone" type="tel" autocomplete="tel-national" inputmode="numeric" maxlength="16" placeholder="10-digit mobile number" required aria-describedby="bk-phone-err">
+                <p class="field-error" id="bk-phone-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="bk-sport">Sport</label>
+                <select id="bk-sport" name="sport">
+                  <option>Badminton</option>
+                  <option>Table tennis</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="bk-date">Date</label>
+                <input id="bk-date" name="date" type="date" required aria-describedby="bk-date-err">
+                <p class="field-error" id="bk-date-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="bk-time">Start time</label>
+                <!-- Hourly options (12 AM to 11 PM) are filled in by js/main.js -->
+                <select id="bk-time" name="time" required aria-describedby="bk-time-err">
+                  <option value="">Choose a start time</option>
+                </select>
+                <p class="field-error" id="bk-time-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="bk-hours">How long?</label>
+                <select id="bk-hours" name="hours">
+                  <option value="1">1 hour</option>
+                  <option value="2">2 hours</option>
+                  <option value="3">3 hours</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn btn-wa btn-lg booking-submit" type="submit">
+              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Continue on WhatsApp
+            </button>
+            <p class="form-note">This opens WhatsApp with your details. Send the message there to request your slot.</p>
+            <noscript><p class="form-note">The form needs JavaScript. You can still <a href="https://wa.me/917200796960?text=Hi%20A2H%20Badminton%20%26%20Indoor%20Sports%21%20I%20would%20like%20to%20book%20a%20slot.%20Preferred%20date%20and%20time%3A%20">book on WhatsApp</a> or call <a href="tel:+917200796960">72007 96960</a>.</p></noscript>
+          </form>
         </div>
       </div>
     </section>
@@ -302,7 +369,7 @@
           </details>
           <details>
             <summary>How do I book a slot?</summary>
-            <p>WhatsApp or call <a href="tel:+917200796960">72007 96960</a> with your preferred date and time, and we'll confirm availability. If you can't get through, try our second number, <a href="tel:+919751509580">97515 09580</a>.</p>
+            <p>Use the <a href="#book">booking form</a>, or WhatsApp or call <a href="tel:+917200796960">72007 96960</a> with your preferred date and time, and we'll confirm availability. If you can't get through, try our second number, <a href="tel:+919751509580">97515 09580</a>.</p>
           </details>
           <details>
             <summary>How much does it cost?</summary>
